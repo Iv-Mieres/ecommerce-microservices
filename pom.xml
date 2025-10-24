@@ -18,7 +18,7 @@
     <modules>
         <module>config-server</module>
         <module>discovery-server</module>
-        <module>proyects</module>
+        <module>microservices</module>
     </modules>
 
 	<properties>
