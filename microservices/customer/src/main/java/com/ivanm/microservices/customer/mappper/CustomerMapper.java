@@ -1,14 +1,16 @@
 package com.ivanm.microservices.customer.mappper;
 
-import com.ivanm.microservices.customer.dto.CustomerDto;
+import com.ivanm.microservices.customer.dto.request.CustomerRequest;
+import com.ivanm.microservices.customer.dto.response.CustomerResponse;
 import com.ivanm.microservices.customer.model.Customer;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CustomerMapper {
 
-    public Customer toEntity(CustomerDto customerDto) {
+    public Customer toEntity(CustomerRequest customerDto) {
         return Customer.builder()
+                .id(customerDto.id())
                 .firstName(customerDto.firstName())
                 .lastName(customerDto.lastName())
                 .email(customerDto.email())
@@ -18,9 +20,9 @@ public class CustomerMapper {
                 .build();
     }
 
-    public CustomerDto toDto(Customer customer) {
-        return new CustomerDto(
-                null,
+    public CustomerResponse toDto(Customer customer) {
+        return new CustomerResponse(
+                customer.getId(),
                 customer.getFirstName(),
                 customer.getLastName(),
                 customer.getEmail(),
