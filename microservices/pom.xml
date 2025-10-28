@@ -5,17 +5,18 @@
     <parent>
         <groupId>com.ivanm</groupId>
         <artifactId>ecommerce</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.ivanm.microservices</groupId>
     <artifactId>microservices</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>microservices</name>
     <description>Microservices </description>
 
     <packaging>pom</packaging>
     <modules>
+        <module>exceptions</module>
         <module>customer</module>
     </modules>
 
@@ -40,11 +41,6 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>

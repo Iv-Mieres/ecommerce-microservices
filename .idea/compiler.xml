@@ -13,10 +13,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
         <module name="config-server" />
         <module name="discovery-server" />
+        <module name="exceptions" />
         <module name="customer" />
       </profile>
     </annotationProcessing>
@@ -30,6 +31,7 @@
       <module name="customer" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="ecommerce" options="-parameters" />
+      <module name="exceptions" options="-parameters" />
       <module name="microservices" options="-parameters" />
       <module name="proyects" options="" />
     </option>
