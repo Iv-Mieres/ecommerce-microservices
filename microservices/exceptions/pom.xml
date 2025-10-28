@@ -7,16 +7,11 @@
         <artifactId>microservices</artifactId>
         <version>0.0.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>customer</artifactId>
-	<name>customer</name>
-	<description>Gestion de usuarios</description>
+	<artifactId>exceptions</artifactId>
+	<name>exceptions</name>
+	<description> Exception handler</description>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-
 	</dependencies>
 
 	<build>
