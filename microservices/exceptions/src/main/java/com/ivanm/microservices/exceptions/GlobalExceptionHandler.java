@@ -1,6 +1,7 @@
 package com.ivanm.microservices.exceptions;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @RestControllerAdvice
+@RefreshScope
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
@@ -20,6 +22,8 @@ public class GlobalExceptionHandler {
         var field = "message";
         var message = "An error has occurred. Please try again later.";
         var errorResponse =  new ErrorResponse(Map.of(field, message));
+
+        log.error("Error Message: {}", ex.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -37,6 +41,7 @@ public class GlobalExceptionHandler {
                 );
 
         var errorResponse = new ErrorResponse(errors);
+        log.warn("Validation Error: {}", ex.toString());
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
